@@ -1,4 +1,4 @@
-# ExploreClinicalTrials-MCP
+# exploreclinicaltrials-mcp
 
 An MCP server that answers clinical-trial questions with cited charts and trial lists from ClinicalTrials.gov.
 
@@ -55,14 +55,14 @@ You need [uv](https://docs.astral.sh/uv/) (`brew install uv` or
 from GitHub:
 
 ```bash
-uvx --from git+https://github.com/pdwytr/ExploreClinicalTrials-MCP exploreclinicaltrials-mcp --help
+uvx --from git+https://github.com/pdwytr/exploreclinicaltrials-mcp exploreclinicaltrials-mcp --help
 ```
 
 Or from a clone:
 
 ```bash
-git clone https://github.com/pdwytr/ExploreClinicalTrials-MCP.git
-cd ExploreClinicalTrials-MCP
+git clone https://github.com/pdwytr/exploreclinicaltrials-mcp.git
+cd exploreclinicaltrials-mcp
 uv sync
 uv run pytest                       # offline, no API key
 uv run exploreclinicaltrials-mcp    # starts the MCP server on stdio
@@ -71,18 +71,18 @@ uv run exploreclinicaltrials-mcp    # starts the MCP server on stdio
 ### Add it to a client
 
 The server command is the same everywhere:
-`uvx --from git+https://github.com/pdwytr/ExploreClinicalTrials-MCP exploreclinicaltrials-mcp`
+`uvx --from git+https://github.com/pdwytr/exploreclinicaltrials-mcp exploreclinicaltrials-mcp`
 
 **Claude Code**
 
 ```bash
-claude mcp add -s user exploreclinicaltrials -- uvx --from git+https://github.com/pdwytr/ExploreClinicalTrials-MCP exploreclinicaltrials-mcp
+claude mcp add -s user exploreclinicaltrials -- uvx --from git+https://github.com/pdwytr/exploreclinicaltrials-mcp exploreclinicaltrials-mcp
 ```
 
 Or install the plugin, which also adds a `clinical-trials` subagent that answers in its own context:
 
 ```
-/plugin marketplace add pdwytr/ExploreClinicalTrials-MCP
+/plugin marketplace add pdwytr/exploreclinicaltrials-mcp
 /plugin install exploreclinicaltrials@exploreclinicaltrials
 ```
 
@@ -94,7 +94,7 @@ Or install the plugin, which also adds a `clinical-trials` subagent that answers
   "mcpServers": {
     "exploreclinicaltrials": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/pdwytr/ExploreClinicalTrials-MCP", "exploreclinicaltrials-mcp"]
+      "args": ["--from", "git+https://github.com/pdwytr/exploreclinicaltrials-mcp", "exploreclinicaltrials-mcp"]
     }
   }
 }
@@ -107,14 +107,14 @@ Or install the plugin, which also adds a `clinical-trials` subagent that answers
 ```toml
 [mcp_servers.exploreclinicaltrials]
 command = "uvx"
-args = ["--from", "git+https://github.com/pdwytr/ExploreClinicalTrials-MCP", "exploreclinicaltrials-mcp"]
+args = ["--from", "git+https://github.com/pdwytr/exploreclinicaltrials-mcp", "exploreclinicaltrials-mcp"]
 tool_timeout_sec = 180
 ```
 
 **VS Code (Copilot agent mode)**
 
 ```bash
-code --add-mcp '{"name":"exploreclinicaltrials","command":"uvx","args":["--from","git+https://github.com/pdwytr/ExploreClinicalTrials-MCP","exploreclinicaltrials-mcp"]}'
+code --add-mcp '{"name":"exploreclinicaltrials","command":"uvx","args":["--from","git+https://github.com/pdwytr/exploreclinicaltrials-mcp","exploreclinicaltrials-mcp"]}'
 ```
 
 **Any other client**: add a stdio server with that command.

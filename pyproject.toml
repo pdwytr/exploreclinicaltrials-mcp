@@ -27,8 +27,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pdwytr/ExploreClinicalTrials-MCP"
-Issues = "https://github.com/pdwytr/ExploreClinicalTrials-MCP/issues"
+Homepage = "https://github.com/pdwytr/exploreclinicaltrials-mcp"
+Issues = "https://github.com/pdwytr/exploreclinicaltrials-mcp/issues"
 
 [project.scripts]
 exploreclinicaltrials-mcp = "exploreclinicaltrials.mcp_server.server:main"
