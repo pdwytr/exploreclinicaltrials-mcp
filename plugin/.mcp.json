@@ -2,7 +2,7 @@
   "mcpServers": {
     "exploreclinicaltrials": {
       "command": "${EXPLORECLINICALTRIALS_LAUNCHER:-uvx}",
-      "args": ["exploreclinicaltrials-mcp@latest"]
+      "args": ["--from", "git+https://github.com/pdwytr/ExploreClinicalTrials-MCP", "exploreclinicaltrials-mcp"]
     }
   }
 }

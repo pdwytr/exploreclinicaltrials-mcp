@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run the MCP server from this checkout's source, for development:
 #   EXPLORECLINICALTRIALS_LAUNCHER=$PWD/scripts/dev-mcp claude --plugin-dir ./plugin
-# The plugin normally launches `uvx exploreclinicaltrials-mcp@latest` (the release on PyPI). uvx keeps a built copy
+# The plugin normally launches `uvx --from git+https://github.com/pdwytr/ExploreClinicalTrials-MCP exploreclinicaltrials-mcp` (the GitHub source). uvx keeps a built copy
 # of a local folder and never rebuilds it, so it cannot run code you are editing. An editable install
 # reads the source files directly: every start has your latest edits. The plugin's arguments (the
 # PyPI spec) are ignored.
