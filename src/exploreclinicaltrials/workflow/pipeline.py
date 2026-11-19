@@ -343,7 +343,7 @@ def _within_countries(target, result: StepResult) -> StepResult:
     dropped from its record (a 'European countries' question must not chart the US)."""
     if not isinstance(target, StudySearchParams) or not target.countries or not isinstance(result, FetchResult):
         return result
-    keep = lambda country: any(contains_term(country, c) or contains_term(c, country) for c in target.countries)  # noqa: E731
+    keep = lambda country: any(contains_term(country, c) or contains_term(c, country) for c in target.countries)
     trials = [t.model_copy(update={"countries": [c for c in t.countries if keep(c)]}) for t in result.trials]
     return result.model_copy(update={"trials": trials})
 

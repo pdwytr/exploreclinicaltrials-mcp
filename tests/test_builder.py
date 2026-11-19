@@ -144,7 +144,7 @@ def test_histogram_last_bin_ends_at_the_largest_value_below_the_top_edge():
 
 
 def test_cooccurrence_network_links_values_within_one_trial():
-    drugs = lambda *names: [Intervention(name=n, type="DRUG") for n in names]  # noqa: E731
+    drugs = lambda *names: [Intervention(name=n, type="DRUG") for n in names]
     trials = [trial(1, interventions=drugs("A", "B")), trial(2, interventions=drugs("A", "B", "C")), trial(3, interventions=drugs("A"))]
     viz, _ = build_visualization(
         {"All": trials},
@@ -167,7 +167,7 @@ def test_bipartite_network_links_two_fields():
 
 
 def test_network_merges_values_that_differ_only_by_case_or_spacing():
-    drugs = lambda *names: [Intervention(name=n, type="DRUG") for n in names]  # noqa: E731
+    drugs = lambda *names: [Intervention(name=n, type="DRUG") for n in names]
     trials = [
         trial(1, interventions=drugs("Rituximab", "Cyclophosphamide")),
         trial(2, interventions=drugs("rituximab", "cyclophosphamide")),

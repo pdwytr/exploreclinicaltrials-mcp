@@ -10,7 +10,7 @@ import json
 import os
 import re
 import secrets
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from pathlib import Path
 from typing import Any
 
@@ -31,7 +31,7 @@ class ResultStore:
     def save(self, request: QueryRequest, response: QueryResponse) -> str:
         """Write one answer; return its id (date first, so ids sort by time)."""
         self.root.mkdir(parents=True, exist_ok=True)
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         result_id = f"{now:%Y%m%d-%H%M%S}-{secrets.token_hex(3)}"
         document = {
             "result_id": result_id,

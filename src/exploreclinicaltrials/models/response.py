@@ -15,7 +15,7 @@ Chart data arrives pre-aggregated: one row per bar / point / time bucket, so eac
 row can carry the citations behind its value.
 """
 
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from enum import Enum
 from typing import Any, Literal
 
@@ -309,7 +309,7 @@ class Meta(BaseModel):
     api_version: str | None = Field(default=None, description="ClinicalTrials.gov API version that served the data.")
     chain: list[ChainStep] = Field(default_factory=list, description="Every fetch the agent made, in order.")
     metrics: RunMetrics | None = Field(default=None, description="Time, tokens and tool calls of this run.")
-    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 # --- Top level ---------------------------------------------------------------------
