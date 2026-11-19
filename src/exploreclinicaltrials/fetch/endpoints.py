@@ -15,7 +15,7 @@ import re
 from enum import Enum
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field, StringConstraints, field_validator, model_validator
+from pydantic import BaseModel, Field, StringConstraints, model_validator
 
 from exploreclinicaltrials.models.request import RecruitmentStatus, TrialPhase
 
