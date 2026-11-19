@@ -3,6 +3,8 @@ name = "exploreclinicaltrials-mcp"
 version = "0.3.0"
 description = "MCP server: ask about clinical trials in any MCP client and get a chart from ClinicalTrials.gov where every value cites its trials"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "pdwytr" }]
 keywords = ["mcp", "mcp-server", "clinical-trials", "clinicaltrials.gov", "charts", "claude", "codex"]
